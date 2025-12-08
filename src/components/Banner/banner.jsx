@@ -1,7 +1,7 @@
 import React from 'react';
 import bg1 from '../../assets/vector1.png'
 
-const banner = () => {
+const banner = ({purchasedTicket,resolvedTicket}) => {
     return (
         <div className='max-w-[1200px] mx-auto flex justify-between mt-5'>
 
@@ -12,7 +12,7 @@ const banner = () => {
 
                 <div className='relative flex flex-col justify-center items-center text-white font-bold text-2xl'>
                     <h2>In-Progress</h2>
-                    <h2 className='text-center'>0</h2>
+                    <h2 className='text-center'>{purchasedTicket}</h2>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@ const banner = () => {
 
                 <div className='relative flex flex-col justify-center items-center text-white font-bold text-2xl'>
                     <h2>Resolve</h2>
-                    <h2 className='text-center'>0</h2>
+                    <h2 className='text-center'>{resolvedTicket}</h2>
                 </div>
             </div>
             
