@@ -1,16 +1,22 @@
-# React + Vite
+1. JSX is a JavaScript syntax that looks like HTML. It is used because it makes UI code easier to write and understand, and helps combine JavaScript + HTML in one place.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2.
+Stae: Internal data of a component.
+can be changed.
 
-Currently, two official plugins are available:
+Props: Data passed from parent to child.
+Read only.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3.
+useState is a React hook used to store and update state in functional components.
+ex: const [count,setCount] = useState(0);
 
-## React Compiler
+4.
+Lift state up to a parent component.
+Use Context API.
+Use State management tools.
+Use custom hooks.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+5.
+<button onClick={handleClick}>Click</button>
+Events are handled using functions,not strings,and  React uses Synthetic Events for consistency.
