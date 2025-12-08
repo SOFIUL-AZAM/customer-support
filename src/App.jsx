@@ -44,7 +44,7 @@ function App() {
     const customerIndex = customerData.findIndex(c=> c.id === id )
     if(customerIndex !== -1){
       customerData.splice(customerIndex,1)
-      
+      toast("Complete") 
     }
 
   }
