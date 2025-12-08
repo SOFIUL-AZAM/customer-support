@@ -19,10 +19,9 @@ const textColor ={
 }
 
 
-const MainSection = ({customersPromise}) => {
+const MainSection = ({customersPromise,purchasedTicket,customerData,resolvedTicket,handleTicket,handleComplete}) => {
 
-    const customerData = use(customersPromise)
-    console.log(customerData)
+    
     return (
 
         
@@ -32,8 +31,8 @@ const MainSection = ({customersPromise}) => {
 
             <div className='grid grid-cols-2 gap-2 mr-3'>
                 {
-                customerData.map(customer =><button>
-                <div className='w-110 h-35 bg-white shadow-lg rounded-[6px] p-4'>
+                customerData.map(customer => <div key={customer.id} onClick={() => handleTicket(customer)} className='cursor-pointer'>
+                    <div className='w-110 h-35 bg-white shadow-lg rounded-[6px] p-4'>
                     <div className='flex justify-between border-red-400'>
                         <h1 className='font-bold'>{customer.title}</h1>
                         <h2 className={`flex gap-2 items-center rounded-2xl p-0.5 font-medium ${textColor[customer.status]}  ${statusColor[customer.status]}`}> <div className={`h-3 w-3 rounded-full ${dotColor[customer.status]} `}></div> {customer.status}</h2>
@@ -51,7 +50,7 @@ const MainSection = ({customersPromise}) => {
                     </div>
 
                 </div>
-            </button> )
+                </div> )
             }
             </div>
             
@@ -60,11 +59,41 @@ const MainSection = ({customersPromise}) => {
                 <div>
                     <h1 className='font-bold text-4xl'>Task Status</h1>
                     <p className='text-gray-500'>Select a ticket to add to Task Status</p>
+
+                    {
+                        purchasedTicket.length === 0 && (
+                            <p className='text-gray-400'>No selected task yet</p>
+                        )
+                    }
+
+                    {/* task status */}
+
+                    {
+                        purchasedTicket.map(task =>(
+                            <div key={task.id} className='shadow-lg bg-white rounded-[6px] p-2 mb-3'>
+                        <h1 className='font-bold w-70'>{task.title}</h1>
+                        <button onClick={()=> handleComplete(task.id)} className='bg-green-500 w-full rounded-[7px] text-white'>Complete</button>
+                    </div>
+                        ))
+                    }
+                    
                 </div>
 
+                {/* resolve */}
+
                 <div>
-                    <h1 className='font-bold text-4xl'>Resolved Task</h1>
-                    <p className='text-gray-500'>No resolved tasks yet.</p>
+                    <h1 className='font-bold text-4xl mb-2'>Resolved Task</h1>
+                    {
+                        resolvedTicket.length === 0 && <p className='text-gray-500'>No resolved tasks yet.</p>
+                    }
+                    {
+                        resolvedTicket.map(task =>(
+                            <div className='shadow-lg bg-white rounded-[6px] p-2 mb-3'>
+                        <h1 className='font-bold w-70'>{task.title}</h1>
+                        <h2 className='text-green-500'>Complete</h2>
+                    </div>
+                        ))
+                    }
                 </div>
             </div>
             </div>
