@@ -5,6 +5,7 @@ import Banner from './components/Banner/banner'
 import MainSection from './components/MainSection/MainSection'
 import Footer from './components/Footer/Footer'
 import { useState } from 'react'
+import { ToastContainer,toast } from 'react-toastify';
 
 const fetchCustomer = async () => {
   const res = await fetch("/customer.json")
@@ -26,9 +27,11 @@ function App() {
   const handleTicket=(ticket) =>{
     if(!purchasedTicket.find(t => t.id === ticket.id)){
       setPurchasedTicket([...purchasedTicket,ticket])
-    
+      toast("Toast added to In-Progress")
     }
-
+    else{
+      toast("Added already")
+    }
   }
 
   const handleComplete = (id) =>{
@@ -64,6 +67,7 @@ function App() {
       
     </div>
       
+      <ToastContainer/>
       
     </>
   )
