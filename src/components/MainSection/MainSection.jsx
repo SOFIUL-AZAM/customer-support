@@ -1,4 +1,3 @@
-import React, { use } from 'react';
 import Img2 from '../../assets/ri_calendar-line.png'
 
 const statusColor ={
@@ -19,7 +18,7 @@ const textColor ={
 }
 
 
-const MainSection = ({customersPromise,purchasedTicket,customerData,resolvedTicket,handleTicket,handleComplete}) => {
+const MainSection = ({purchasedTicket,customerData,resolvedTicket,handleTicket,handleComplete}) => {
 
     
     return (
