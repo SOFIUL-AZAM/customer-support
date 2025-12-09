@@ -1,0 +1,22 @@
+1. JSX is a JavaScript syntax that looks like HTML. It is used because it makes UI code easier to write and understand, and helps combine JavaScript + HTML in one place.
+
+2.
+Stae: Internal data of a component.
+can be changed.
+
+Props: Data passed from parent to child.
+Read only.
+
+3.
+useState is a React hook used to store and update state in functional components.
+ex: const [count,setCount] = useState(0);
+
+4.
+Lift state up to a parent component.
+Use Context API.
+Use State management tools.
+Use custom hooks.
+
+5.
+<button onClick={handleClick}>Click</button>
+Events are handled using functions,not strings,and  React uses Synthetic Events for consistency.
