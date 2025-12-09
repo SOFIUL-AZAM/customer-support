@@ -3,9 +3,9 @@ import React from 'react';
 const navbar = () => {
     return (
         <div className='bg-white'>
-            <div className='flex justify-between max-w-[1200px] mx-auto items-center p-2'>
+            <div className='md:flex justify-between max-w-[1200px] mx-auto items-center p-2'>
             <h2 className='font-bold'>CS — Ticket System</h2>
-            <div className='flex gap-3 items-center'>
+            <div className='md:flex gap-3 items-center'>
                 <h3>Home</h3>
                 <h3>FAQ</h3>
                 <h3>Changelog</h3>

@@ -27,9 +27,9 @@ const MainSection = ({customersPromise,purchasedTicket,customerData,resolvedTick
         
         <div className='mt-8 max-w-[1200px] mx-auto'>
 
-            <div className='flex justify-between  '>
+            <div className='md:flex justify-between  '>
 
-            <div className='grid grid-cols-2 gap-2 mr-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-2 mr-3'>
                 {
                 customerData.map(customer => <div key={customer.id} onClick={() => handleTicket(customer)} className='cursor-pointer'>
                     <div className='w-110 h-35 bg-white shadow-lg rounded-[6px] p-4'>
